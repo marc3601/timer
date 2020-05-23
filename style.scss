@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+$marginTop: 15vh;
+$backgroundPrimary: #f37121;
+$backgroundSecond: #f4ea8e;
+
+@mixin mobile {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+@mixin mobileLandscape{
+    @media screen and (max-width: 850px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width:851px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width:1600px) {
+        @content
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darken($backgroundSecond, 20);
+
+    .bg {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+        clip-path: polygon(50% 0%, 100% 0, 26% 100%, 0 100%, 0 0);
+        background-color: $backgroundPrimary
+    }
+
+    .timer {
+        text-align: center;
+        color: white;
+
+        .timer__title {
+            @include mobile {
+                font-size: 3em;
+            }
+            @include mobileLandscape() {
+                font-size: 3em;
+                padding: 5vh;
+            }
+            padding-top: $marginTop;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4em;
+            letter-spacing: 4px;
+            user-select: none;
+        }
+
+        .timer__display {
+            @include mobile {
+                margin: 10vh auto;
+                border-radius: 1em;
+                width: 80vw;
+            }
+            @include desktop {
+                width: 30vw;
+            }
+            @include mobileLandscape() {
+                margin: 5vh auto 10vh;
+                border-radius: 1em;
+            }
+
+            width: 60vw;
+            padding: 20px 0;
+            border-radius: 2em;
+            margin:$marginTop auto;
+            background-color: #d92027;
+            box-shadow: 4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input:disabled {
+                color: white;
+                border: none;
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            .display__screen {
+                @include mobile {
+                    font-size: 2.5em;
+                    width: 60px;
+                    height: 60px;
+                }
+                @include mobileLandscape() {
+                    font-size: 2.5em;
+                    width: 60px;
+                    height: 60px;
+                }
+
+                color: white;
+                width: 100px;
+                height: 100px;
+                font-family: 'Montserrat',
+                sans-serif;
+                text-align: center;
+                font-size: 4em;
+                background: transparent;
+                border: none;
+                border: 1px solid white
+            }
+        }
+
+        .keyboard__button {
+            margin: 0 20px;
+
+            .material-icons {
+                font-size: 6em;
+                cursor: pointer;
+                user-select: none;
+                @include mobile {
+                    font-size: 4em;
+                }
+                @include mobileLandscape() {
+                    font-size: 4em;
+                    
+                }
+                
+            }
+        }
+    }
+}

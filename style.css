@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ebd931;
+}
+
+body .bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 26% 100%, 0 100%, 0 0);
+          clip-path: polygon(50% 0%, 100% 0, 26% 100%, 0 100%, 0 0);
+  background-color: #f37121;
+}
+
+body .timer {
+  text-align: center;
+  color: white;
+}
+
+body .timer .timer__title {
+  padding-top: 15vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  letter-spacing: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body .timer .timer__title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  body .timer .timer__title {
+    font-size: 3em;
+    padding: 5vh;
+  }
+}
+
+body .timer .timer__display {
+  width: 60vw;
+  padding: 20px 0;
+  border-radius: 2em;
+  margin: 15vh auto;
+  background-color: #d92027;
+  -webkit-box-shadow: 4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 600px) {
+  body .timer .timer__display {
+    margin: 10vh auto;
+    border-radius: 1em;
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  body .timer .timer__display {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  body .timer .timer__display {
+    margin: 5vh auto 10vh;
+    border-radius: 1em;
+  }
+}
+
+body .timer .timer__display input[type=number]::-webkit-inner-spin-button,
+body .timer .timer__display input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body .timer .timer__display input:disabled {
+  color: white;
+  border: none;
+}
+
+body .timer .timer__display input:focus {
+  outline: none;
+}
+
+body .timer .timer__display .display__screen {
+  color: white;
+  width: 100px;
+  height: 100px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 4em;
+  background: transparent;
+  border: none;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 600px) {
+  body .timer .timer__display .display__screen {
+    font-size: 2.5em;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  body .timer .timer__display .display__screen {
+    font-size: 2.5em;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+body .timer .keyboard__button {
+  margin: 0 20px;
+}
+
+body .timer .keyboard__button .material-icons {
+  font-size: 6em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body .timer .keyboard__button .material-icons {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  body .timer .keyboard__button .material-icons {
+    font-size: 4em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>timer</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="timer">
+        <h1 class="timer__title">Timer</h1>
+        <section class="timer__display">
+            <input class="display__screen" data-hours value="00" type="number" min="0" max="99"></input>
+            <input class="display__screen" data-minutes value="00" type="number" min="0" max="59"></input>
+            <input class="display__screen" data-seconds value="00" type="number" min="0" max="59"></input>
+        </section>
+        <section class="timer__keyboard">
+            <span class="keyboard__button" data-button><i class="material-icons">add_alarm</i></span>
+            <span class="keyboard__button" data-stopbtn><i class="material-icons">pause</i></span>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const timer = new Timer();
+        timer.initializeTimer();
+    </script>
+</body>
+
+</html>
