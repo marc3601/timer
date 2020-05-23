@@ -34,6 +34,16 @@ class Timer {
                 }
             }
         })
+        window.addEventListener("keydown", (event) => {
+            if (event.keyCode === 13) {
+                if (this.hours.value !== "00" || this.minutes.value !== "00" || this.seconds.value !== "00") {
+                    if (!this.hours.disabled && !this.minutes.disabled && !this.seconds.disabled) {
+                        this.startTimer();
+                    }
+                }
+            }
+        })
+        
 
         this.buttonStop.addEventListener('click', () => {
             this.stopTimer();
@@ -125,4 +135,6 @@ class Timer {
             }
         }, 1000)
     }
+    
 }
+
