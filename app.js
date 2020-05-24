@@ -55,6 +55,9 @@ class Timer {
             if (this.sec === 0) {
                 this.buttonAlarm.style.opacity = "0"
                 this.buttonAlarm.style.animation = "none"
+                this.hours.removeAttribute('disabled');
+                this.minutes.removeAttribute('disabled');
+                this.seconds.removeAttribute('disabled');
                 clearInterval(this.alarmStop)
 
             }
@@ -123,7 +126,9 @@ class Timer {
                 this.sec = 59;
             }
             if (this.hours.value === "00" && this.minutes.value === "00" && this.seconds.value === "00") {
-                this.stopTimer()
+                clearInterval(this.secCount)
+                clearInterval(this.minCount)
+                clearInterval(this.hrCount)
                 this.notificationSound();
             }
             if (!this.hr > 0 && !this.min > 0 && this.sec < 5) {
