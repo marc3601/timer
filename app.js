@@ -43,7 +43,7 @@ class Timer {
                 }
             }
         })
-        
+
 
         this.buttonStop.addEventListener('click', () => {
             this.stopTimer();
@@ -111,7 +111,11 @@ class Timer {
             } else if (this.min > 0 && this.sec === 0) {
                 this.sec = 59;
             }
+            if (this.hours.value === "00" && this.minutes.value === "00" && this.seconds.value === "00") {
+                this.stopTimer()
+            }
         }, 1000)
+
     }
 
     countMinutes() {
@@ -129,12 +133,19 @@ class Timer {
             // GODZINY
             this.hr < 10 ? this.hours.value = "0" + this.hr : this.hours.value = this.hr
             if (this.hr > 0 && this.min === 0 && this.sec === 0) {
-                this.hr--
-                this.min = 59
-                this.sec = 59
+                // this.hr--
+                // this.min = 59
+                // this.sec = 59
+                // this.sec = 0
+                // this.min = 0
+                let current = this.hr
+                setTimeout(() => {
+                    current === this.hr && this.hr--
+                    this.min = 59
+                    this.sec = 59
+                }, 1000)
             }
         }, 1000)
     }
-    
-}
 
+}
