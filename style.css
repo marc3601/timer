@@ -27,7 +27,8 @@ body .timer {
 
 body .timer .timer__title {
   padding-top: 15vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat',
+ sans-serif;
   font-size: 4em;
   letter-spacing: 4px;
   -webkit-user-select: none;
@@ -63,7 +64,7 @@ body .timer .timer__display {
   body .timer .timer__display {
     margin: 10vh auto;
     border-radius: 1em;
-    width: 80vw;
+    width: 90vw;
   }
 }
 
@@ -99,7 +100,8 @@ body .timer .timer__display .display__screen {
   color: white;
   width: 100px;
   height: 100px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat',
+ sans-serif;
   text-align: center;
   font-size: 4em;
   background: transparent;
@@ -123,9 +125,66 @@ body .timer .timer__display .display__screen {
   }
 }
 
+body .timer .timer__display .display__button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+body .timer .timer__display .display__button .material-icons {
+  position: absolute;
+  bottom: -10px;
+}
+
+@media only screen and (min-width: 1600px) {
+  body .timer .timer__display .display__button .material-icons {
+    left: 20px;
+    font-size: 4em;
+  }
+}
+
+@media only screen and (min-width: 851px) {
+  body .timer .timer__display .display__button .material-icons {
+    left: 20px;
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body .timer .timer__display .display__button .material-icons {
+    left: 4px;
+    font-size: 2em;
+    bottom: -4px;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  body .timer .timer__display .display__button .material-icons {
+    left: 10px;
+    font-size: 3em;
+    bottom: -9px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 850px) {
+  body .timer .timer__display .display__button .material-icons {
+    font-size: 3em;
+    bottom: -11px;
+  }
+}
+
 body .timer .keyboard__button {
   margin: 0 20px;
 }
+
+
 
 body .timer .keyboard__button .material-icons {
   font-size: 6em;

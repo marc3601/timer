@@ -6,13 +6,15 @@ class Timer {
         this.secCount
         this.minCount
         this.hrCount
+        this.alarmStop
 
         this.Selectors = {
             hours: '[data-hours]',
             minutes: '[data-minutes]',
             seconds: '[data-seconds]',
             button: '[data-button]',
-            buttonStop: '[data-stopbtn]'
+            buttonStop: '[data-stopbtn]',
+            buttonAlarm: '[data-alarm]'
         }
     }
 
@@ -22,7 +24,7 @@ class Timer {
         this.seconds = document.querySelector(this.Selectors.seconds)
         this.button = document.querySelector(this.Selectors.button)
         this.buttonStop = document.querySelector(this.Selectors.buttonStop)
-
+        this.buttonAlarm = document.querySelector(this.Selectors.buttonAlarm)
         this.addEventListeners()
     }
 
@@ -44,9 +46,16 @@ class Timer {
             }
         })
 
-
         this.buttonStop.addEventListener('click', () => {
             this.stopTimer();
+        })
+
+        this.buttonAlarm.addEventListener('click', () => {
+
+            if (this.sec === 0) {
+                this.buttonAlarm.style.opacity = "0"
+                clearInterval(this.alarmStop)
+            }
         })
 
         this.seconds.addEventListener('keyup', () => {
@@ -113,6 +122,10 @@ class Timer {
             }
             if (this.hours.value === "00" && this.minutes.value === "00" && this.seconds.value === "00") {
                 this.stopTimer()
+                this.notificationSound();
+            }
+            if (!this.hr > 0 && !this.min > 0 && this.sec < 5) {
+                this.buttonAlarm.style.opacity = "1"
             }
         }, 1000)
 
@@ -133,11 +146,6 @@ class Timer {
             // GODZINY
             this.hr < 10 ? this.hours.value = "0" + this.hr : this.hours.value = this.hr
             if (this.hr > 0 && this.min === 0 && this.sec === 0) {
-                // this.hr--
-                // this.min = 59
-                // this.sec = 59
-                // this.sec = 0
-                // this.min = 0
                 let current = this.hr
                 setTimeout(() => {
                     current === this.hr && this.hr--
@@ -146,6 +154,15 @@ class Timer {
                 }, 1000)
             }
         }, 1000)
+    }
+    playSound() {
+        const alarm = new Audio("notification.mp3");
+        alarm.play();
+    }
+
+    notificationSound() {
+        this.playSound();
+        this.alarmStop = setInterval(this.playSound, 4000)
     }
 
 }

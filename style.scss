@@ -9,7 +9,13 @@ $backgroundSecond: #f4ea8e;
         @content;
     }
 }
-@mixin mobileLandscape{
+@mixin alarmIconFix {
+    @media only screen and (min-width: 600px) and (max-width:850px) {
+        @content;
+    }
+}
+
+@mixin mobileLandscape {
     @media screen and (max-width: 850px) and (orientation: landscape) {
         @content;
     }
@@ -20,6 +26,7 @@ $backgroundSecond: #f4ea8e;
         @content;
     }
 }
+
 @mixin desktop {
     @media only screen and (min-width:1600px) {
         @content
@@ -52,12 +59,15 @@ body {
             @include mobile {
                 font-size: 3em;
             }
+
             @include mobileLandscape() {
                 font-size: 3em;
                 padding: 5vh;
             }
+
             padding-top: $marginTop;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat',
+            sans-serif;
             font-size: 4em;
             letter-spacing: 4px;
             user-select: none;
@@ -67,11 +77,13 @@ body {
             @include mobile {
                 margin: 10vh auto;
                 border-radius: 1em;
-                width: 80vw;
+                width: 90vw;
             }
+
             @include desktop {
                 width: 30vw;
             }
+
             @include mobileLandscape() {
                 margin: 5vh auto 10vh;
                 border-radius: 1em;
@@ -106,6 +118,7 @@ body {
                     width: 60px;
                     height: 60px;
                 }
+
                 @include mobileLandscape() {
                     font-size: 2.5em;
                     width: 60px;
@@ -123,24 +136,64 @@ body {
                 border: none;
                 border: 1px solid white
             }
+
+            .display__button {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                user-select: none;
+                opacity: 0;
+                transition: .5s ease;
+                
+                .material-icons {
+                    position: absolute;
+                    bottom: -10px;
+                    @include desktop {
+                        left: 20px;
+                        font-size: 4em;
+                    }
+                    @include  tablet {
+                        left: 20px;
+                        font-size: 4em;
+                    }
+                    @include mobile {
+                        left: 4px;
+                        font-size: 2em;
+                        bottom: -4px;
+                    }
+                    @include mobileLandscape() {
+                        left: 10px;
+                        font-size: 3em;
+                        bottom: -9px;
+                    }
+                    @include alarmIconFix {
+                        font-size: 3em;
+                        bottom: -11px;
+                    }
+                }
+            }
         }
 
         .keyboard__button {
             margin: 0 20px;
+            
 
             .material-icons {
                 font-size: 6em;
                 cursor: pointer;
                 user-select: none;
+
                 @include mobile {
                     font-size: 4em;
                 }
+
                 @include mobileLandscape() {
                     font-size: 4em;
-                    
+
                 }
-                
+
             }
         }
+       
     }
 }
