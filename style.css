@@ -27,8 +27,7 @@ body .timer {
 
 body .timer .timer__title {
   padding-top: 15vh;
-  font-family: 'Montserrat',
- sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 4em;
   letter-spacing: 4px;
   -webkit-user-select: none;
@@ -100,8 +99,7 @@ body .timer .timer__display .display__screen {
   color: white;
   width: 100px;
   height: 100px;
-  font-family: 'Montserrat',
- sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 4em;
   background: transparent;
@@ -138,6 +136,28 @@ body .timer .timer__display .display__button {
   transition: .5s ease;
 }
 
+@-webkit-keyframes shake {
+  from {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  to {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+
+@keyframes shake {
+  from {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  to {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+
 body .timer .timer__display .display__button .material-icons {
   position: absolute;
   bottom: -10px;
@@ -145,7 +165,7 @@ body .timer .timer__display .display__button .material-icons {
 
 @media only screen and (min-width: 1600px) {
   body .timer .timer__display .display__button .material-icons {
-    left: 20px;
+    left: 10px;
     font-size: 4em;
   }
 }
@@ -183,8 +203,6 @@ body .timer .timer__display .display__button .material-icons {
 body .timer .keyboard__button {
   margin: 0 20px;
 }
-
-
 
 body .timer .keyboard__button .material-icons {
   font-size: 6em;

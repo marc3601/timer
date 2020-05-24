@@ -138,18 +138,23 @@ body {
             }
 
             .display__button {
+               
+
                 display: inline-block;
                 position: relative;
                 cursor: pointer;
                 user-select: none;
                 opacity: 0;
                 transition: .5s ease;
-                
+                @keyframes shake {
+                    from  {transform: translateX(5px);}
+                    to {transform: translateX(-5px);}
+                  }
                 .material-icons {
                     position: absolute;
                     bottom: -10px;
                     @include desktop {
-                        left: 20px;
+                        left: 10px;
                         font-size: 4em;
                     }
                     @include  tablet {
@@ -172,6 +177,7 @@ body {
                     }
                 }
             }
+            
         }
 
         .keyboard__button {

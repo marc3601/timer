@@ -54,7 +54,9 @@ class Timer {
 
             if (this.sec === 0) {
                 this.buttonAlarm.style.opacity = "0"
+                this.buttonAlarm.style.animation = "none"
                 clearInterval(this.alarmStop)
+
             }
         })
 
@@ -126,6 +128,7 @@ class Timer {
             }
             if (!this.hr > 0 && !this.min > 0 && this.sec < 5) {
                 this.buttonAlarm.style.opacity = "1"
+                if (this.sec === 0) return this.buttonAlarm.style.animation = "shake .1s linear infinite alternate"
             }
         }, 1000)
 
